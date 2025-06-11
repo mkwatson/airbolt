@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "biome check .",
+    "format": "biome format .",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +21,8 @@
   "devDependencies": {
     "@types/node": "^24.0.1",
     "typescript": "^5.8.3",
-    "tsx": "^4.20.1"
+    "tsx": "^4.20.1",
+    "biome": "^0.3.3",
+    "husky": "^9.1.7"
   }
 }
