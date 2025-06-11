@@ -5,8 +5,8 @@
 		"noImplicitOverride": true,
 
 		/* modern Node ESM */
-		"module": "NodeNext",
-		"moduleResolution": "NodeNext",
+		"module": "ESNext",
+		"moduleResolution": "node",
 		"target": "ES2022",
 		"lib": ["ES2022"],
 
@@ -15,7 +15,11 @@
 		"outDir": "dist",
 
 		/* tooling */
-		"skipLibCheck": true // speeds up tsc
+		"skipLibCheck": true, // speeds up tsc
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"allowJs": true,
+		"forceConsistentCasingInFileNames": true
 	},
 	"include": ["src/**/*"]
 }
