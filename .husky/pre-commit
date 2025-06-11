@@ -1,2 +1,4 @@
 #!/usr/bin/env sh
-pnpm exec biome check --write . 
+pnpm exec biome check --write .
+pnpm typecheck
+pnpm test 
