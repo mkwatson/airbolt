@@ -1,21 +1,21 @@
 {
-    "compilerOptions": {
-      /* strict safety */
-      "strict": true,
-      "noImplicitOverride": true,
-  
-      /* modern Node ESM */
-      "module": "NodeNext",
-      "moduleResolution": "NodeNext",
-      "target": "ES2022",
-      "lib": ["ES2022"],
-  
-      /* paths */
-      "rootDir": "src",
-      "outDir": "dist",
-  
-      /* tooling */
-      "skipLibCheck": true   // speeds up tsc
-    },
-    "include": ["src/**/*"]
-  }
+	"compilerOptions": {
+		/* strict safety */
+		"strict": true,
+		"noImplicitOverride": true,
+
+		/* modern Node ESM */
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"target": "ES2022",
+		"lib": ["ES2022"],
+
+		/* paths */
+		"rootDir": "src",
+		"outDir": "dist",
+
+		/* tooling */
+		"skipLibCheck": true // speeds up tsc
+	},
+	"include": ["src/**/*"]
+}
