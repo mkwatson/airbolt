@@ -25,10 +25,10 @@
 		"test": "vitest run",
 		"test:watch": "vitest",
 		"test:coverage": "vitest run --coverage",
-		"ci": "pnpm typecheck && pnpm test && pnpm build",
-		"quality": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
 		"lint": "biome check .",
 		"format": "biome format .",
+		"ci": "pnpm typecheck && pnpm test && pnpm build",
+		"quality": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
 		"prepare": "husky install"
 	},
 	"keywords": ["fastify", "typescript", "api", "starter"],
@@ -36,14 +36,16 @@
 	"license": "MIT",
 	"packageManager": "pnpm@10.10.0",
 	"dependencies": {
-		"fastify": "^5.3.3"
+		"fastify": "^5.3.3",
+		"@fastify/swagger": "^9.5.1",
+		"@fastify/swagger-ui": "^5.2.3"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
 		"@types/node": "^24.0.1",
+		"husky": "^9.1.7",
 		"typescript": "^5.8.3",
 		"tsx": "^4.20.1",
-		"@biomejs/biome": "1.9.4",
-		"husky": "^9.1.7",
 		"vitest": "^3.2.3"
 	}
 }

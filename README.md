@@ -1,61 +1,125 @@
 # Airbolt
 
-*A lean, type-safe Fastify API starter that aims for **maximum signal with minimum tooling**.*
+> Lean-but-no-compromise Fastify starter kit
 
-| Status  | Badge (activated in later commits) |
-|---------|------------------------------------|
-| Build   | _coming soon_ |
-| Coverage| _coming soon_ |
-| Release | _coming soon_ |
-| Docs    | `/docs` (after Commit 5) |
+A production-ready TypeScript API starter built with Fastify v5, featuring comprehensive tooling, documentation, and containerization.
 
----
+## ✨ Features
 
-## Quick start
+- **🚀 Fastify v5** - High-performance web framework
+- **📚 OpenAPI 3.0** - Interactive API documentation with Swagger UI
+- **🔒 TypeScript Strict Mode** - Enhanced type safety
+- **🐳 Docker Ready** - Multi-stage production builds
+- **🧪 Vitest** - Fast unit testing with coverage
+- **🎨 Biome** - Lightning-fast formatting and linting
+- **🪝 Git Hooks** - Pre-commit quality gates with Husky
+- **📦 pnpm** - Efficient package management
 
-1. **Install dependencies**
+## 🚀 Quick Start
 
 ```bash
+# Install dependencies
 pnpm install
-````
 
-2. **Run the dev server** (will be added in Commit 2):
-
-```bash
+# Start development server
 pnpm dev
+
+# View API documentation
+open http://localhost:3001/docs
 ```
 
-   The API will start on [http://localhost:3001](http://localhost:3001) with a `/healthz` route.
+## 📋 Scripts
 
-3. **Run tests** (added in Commit 4):
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Start development server with hot reload |
+| `pnpm build` | Build for production |
+| `pnpm start` | Start production server |
+| `pnpm test` | Run tests |
+| `pnpm test:watch` | Run tests in watch mode |
+| `pnpm test:coverage` | Run tests with coverage |
+| `pnpm lint` | Check code style and quality |
+| `pnpm format` | Format code |
+| `pnpm typecheck` | Type checking |
+| `pnpm quality` | Run full quality pipeline |
+| `pnpm ci` | CI pipeline (typecheck + test + build) |
+
+## 🐳 Docker
 
 ```bash
-pnpm test
+# Build image
+docker build -t airbolt .
+
+# Run container
+docker run -p 3001:3001 airbolt
+
+# Health check
+curl http://localhost:3001/healthz
 ```
 
----
+## 📚 API Documentation
 
-## Philosophy
+- **Interactive Docs**: http://localhost:3001/docs
+- **OpenAPI Spec**: http://localhost:3001/docs/json
+- **YAML Spec**: http://localhost:3001/docs/yaml
 
-* **Zero-ceremony** – only the tools that pull their weight.
-* **Fail-fast** – strict TypeScript, tests, and CI gates catch issues early.
-* **Observable by default** – structured logs (Pino) and OpenTelemetry hooks ship with the skeleton.
-* **Docs as code** – OpenAPI spec is auto-generated and served from the running app.
+### Documentation Strategy
 
----
+Airbolt follows **API-first documentation** best practices:
+- **Live API reference** served by the application (like Stripe, GitHub APIs)
+- **Auto-generated** from route schemas - always accurate and up-to-date
+- **Interactive testing** directly in the browser during development
+- **Environment-aware** - different docs for dev/staging/production
 
-## Roadmap (first 7 commits)
+This approach ensures documentation never drifts from implementation, providing immediate developer feedback and production-ready API exploration.
 
-1. Fastify skeleton with `/healthz`
-2. Hot-reload dev loop (`node --watch`)
-3. Biome formatter/linter with pre-commit hook
-4. Vitest harness + first spec
-5. OpenAPI docs route (`/docs`)
-6. GitHub Actions (test, build, CodeQL, semantic-release)
-7. Dependabot updates
+## 🏗️ Project Structure
 
----
+```
+├── src/
+│   └── server.ts          # Main application
+├── test/
+│   ├── healthz.spec.ts    # Health endpoint tests
+│   ├── swagger.spec.ts    # Documentation tests
+│   └── setup.ts           # Test configuration
+├── dist/                  # Built output
+├── .husky/                # Git hooks
+├── Dockerfile             # Container definition
+├── vitest.config.ts       # Test configuration
+├── tsconfig.json          # TypeScript config
+├── tsconfig.build.json    # Production build config
+└── package.json           # Dependencies and scripts
+```
 
-## License
+## 🔧 Configuration
 
-Airbolt is released under the [MIT License](./LICENSE).
+### Environment Variables
+
+- `NODE_ENV` - Environment (development/production)
+- `PORT` - Server port (default: 3001)
+
+### TypeScript
+
+- **Strict mode** enabled for maximum type safety
+- **ESM modules** with modern Node.js features
+- **Separate build config** for production
+
+### Quality Gates
+
+Pre-commit hooks ensure:
+- ✅ Code formatting (Biome)
+- ✅ Type checking (TypeScript)
+- ✅ Tests passing (Vitest)
+
+## 🚢 Production Deployment
+
+The Docker image is optimized for production:
+
+- **Multi-stage build** for minimal image size
+- **Non-root user** for security
+- **Health checks** for orchestration
+- **Alpine Linux** base for security and size
+
+## 📄 License
+
+MIT
